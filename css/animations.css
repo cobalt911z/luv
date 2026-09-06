@@ -1,0 +1,408 @@
+/* ==========================================================================
+   ANNIVERSARY WEBSITE - KEYFRAMES & ANIMATION EFFECTS (ENHANCED)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. HEART PULSE & BEAT
+   -------------------------------------------------------------------------- */
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.22); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.22); }
+  70% { transform: scale(1); }
+}
+
+.beating-heart {
+  animation: heartPulse 1.4s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. FLOATING HEARTS & PARTICLES
+   -------------------------------------------------------------------------- */
+.heart {
+  position: absolute;
+  bottom: -10%;
+  font-size: 1.5rem;
+  animation: floatUp var(--duration, 8s) var(--delay, 0s) infinite ease-in;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg) scale(0.5);
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-115vh) rotate(720deg) scale(1.3);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. SCROLL REVEAL ANIMATIONS (Intersection Observer Targets)
+   -------------------------------------------------------------------------- */
+[data-reveal] {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition: opacity 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-reveal="fade-up"] {
+  transform: translateY(45px);
+}
+
+[data-reveal="fade-down"] {
+  transform: translateY(-45px);
+}
+
+[data-reveal="fade-left"] {
+  transform: translateX(-50px);
+}
+
+[data-reveal="fade-right"] {
+  transform: translateX(50px);
+}
+
+[data-reveal="scale"] {
+  transform: scale(0.88);
+}
+
+[data-reveal="rotate"] {
+  transform: rotate(-6deg) scale(0.9);
+}
+
+/* Triggered State */
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+}
+
+/* --------------------------------------------------------------------------
+   4. TYPEWRITER & CURSOR BLINK
+   -------------------------------------------------------------------------- */
+.typing-cursor::after {
+  content: '|';
+  display: inline-block;
+  color: var(--pink-deep);
+  font-weight: 700;
+  animation: blinkCursor 0.8s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   5. SHIMMER & GLOW EFFECTS
+   -------------------------------------------------------------------------- */
+@keyframes glowShimmer {
+  0% { box-shadow: 0 0 15px rgba(255, 105, 180, 0.2); }
+  50% { box-shadow: 0 0 35px rgba(255, 20, 147, 0.5), 0 0 15px rgba(255, 215, 0, 0.4); }
+  100% { box-shadow: 0 0 15px rgba(255, 105, 180, 0.2); }
+}
+
+.glow-effect {
+  animation: glowShimmer 3s infinite ease-in-out;
+}
+
+.sparkle {
+  display: inline-block;
+  animation: sparkleRotate 2.5s infinite linear;
+}
+
+@keyframes sparkleRotate {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.3) rotate(180deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+/* --------------------------------------------------------------------------
+   6. SOFT FLOATING & HOVER BOUNCE
+   -------------------------------------------------------------------------- */
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-soft {
+  animation: floatSoft 4s infinite ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   7. VINYL SPIN
+   -------------------------------------------------------------------------- */
+@keyframes spinVinyl {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --------------------------------------------------------------------------
+   8. SPARKLE BURST (for surprise button)
+   -------------------------------------------------------------------------- */
+@keyframes sparkleBurst {
+  0% { transform: scale(0) rotate(0deg); opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: scale(3) rotate(180deg); opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   9. GRADIENT TEXT ANIMATION
+   -------------------------------------------------------------------------- */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient-text {
+  background: linear-gradient(270deg, var(--pink-deep), var(--pink-blush), var(--pastel-lavender), var(--pink-blush), var(--pink-deep));
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 5s ease infinite;
+}
+
+/* --------------------------------------------------------------------------
+   10. BOUNCE IN (for cards entering)
+   -------------------------------------------------------------------------- */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. WIGGLE (for cute interactive elements)
+   -------------------------------------------------------------------------- */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+.wiggle-hover:hover {
+  animation: wiggle 0.5s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   12. SPARKLE STARS (background decoration)
+   -------------------------------------------------------------------------- */
+@keyframes twinkling {
+  0%, 100% { opacity: 0.1; transform: scale(0.8); }
+  50% { opacity: 0.9; transform: scale(1.2); }
+}
+
+/* --------------------------------------------------------------------------
+   13. SHIMMER CARD SHINE EFFECT
+   -------------------------------------------------------------------------- */
+@keyframes cardShine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: none;
+  animation: cardShine 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   14. RAINBOW BORDER ANIMATION
+   -------------------------------------------------------------------------- */
+@keyframes rainbowBorder {
+  0% { border-color: #FFB6C1; }
+  16% { border-color: #E6E6FA; }
+  33% { border-color: #B0E0E6; }
+  50% { border-color: #C1F0C1; }
+  66% { border-color: #FFDAB9; }
+  83% { border-color: #D8BFD8; }
+  100% { border-color: #FFB6C1; }
+}
+
+/* --------------------------------------------------------------------------
+   15. POP EFFECT (scale up then settle)
+   -------------------------------------------------------------------------- */
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.pop-in {
+  animation: popIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+/* --------------------------------------------------------------------------
+   16. LOADING SCREEN ANIMATION ENHANCEMENT
+   -------------------------------------------------------------------------- */
+.loading-content {
+  animation: popIn 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.beating-heart {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+}
+
+/* --------------------------------------------------------------------------
+   17. FADE IN UP STAGGER (for timeline items)
+   -------------------------------------------------------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   18. PETAL FLOAT (decorative petals)
+   -------------------------------------------------------------------------- */
+@keyframes petalFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg) scale(0.5);
+  }
+  10% { opacity: 0.9; }
+  90% { opacity: 0.5; }
+  100% {
+    opacity: 0;
+    transform: translateY(-110vh) rotate(540deg) scale(1.1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   19. HEART TRAIL EFFECT (on click)
+   -------------------------------------------------------------------------- */
+.heart-trail {
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.2rem;
+  animation: heartTrail 0.8s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes heartTrail {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-60px) scale(1.5); }
+}
+
+/* --------------------------------------------------------------------------
+   20. RIPPLE EFFECT (on button click)
+   -------------------------------------------------------------------------- */
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 0.8; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   21. SCROLL WHEEL ANIMATION (hero indicator)
+   -------------------------------------------------------------------------- */
+@keyframes scrollWheel {
+  0% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, 14px); }
+}
+
+/* --------------------------------------------------------------------------
+   22. SHAKE ERROR (passcode)
+   -------------------------------------------------------------------------- */
+@keyframes shakeError {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-12px); }
+  40%, 80% { transform: translateX(12px); }
+}
+
+.shake-error {
+  animation: shakeError 0.5s ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   23. CONFETTI EFFECT (triggered by JS)
+   -------------------------------------------------------------------------- */
+.confetti-piece {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+  0% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(100vh) rotate(720deg); }
+}
+
+/* --------------------------------------------------------------------------
+   24. SECTION DIVIDER WAVE ANIMATION
+   -------------------------------------------------------------------------- */
+@keyframes waveSway {
+  0%, 100% { d: path("M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"); }
+  50% { d: path("M0,20 C360,60 1080,20 1440,60 L1440,80 L0,80 Z"); }
+}
+
+/* --------------------------------------------------------------------------
+   25. ACCESSIBILITY (Reduced Motion)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .heart {
+    display: none !important;
+  }
+
+  .sakura-petal {
+    display: none !important;
+  }
+
+  body::before {
+    animation: none !important;
+  }
+}

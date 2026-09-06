@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="เว็บไซต์ฉลองวันครบรอบความรัก ความทรงจำ และเรื่องราวของเรา - Our Romantic Anniversary Celebration">
+  <meta name="keywords" content="Anniversary, Love Story, Romantic Website, Couple Memories">
+  <meta name="author" content="Antigravity Love Web">
+  <title>Happy Anniversary! 💕 | สุขสันต์วันครบรอบ</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Dancing+Script:wght@500;600;700&family=Nunito:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Pacifico&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,400&family=Quicksand:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/aesthetic.css">
+</head>
+
+<body>
+
+  <!-- Loading Screen Overlay -->
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loading-content">
+      <div class="beating-heart">💖</div>
+      <h2 class="loading-text" data-th="กำลังโหลดความทรงจำแสนหวาน..." data-en="Loading sweet memories...">
+        กำลังโหลดความทรงจำแสนหวาน...</h2>
+      <div class="loading-bar">
+        <div class="loading-progress" id="loadingProgress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Passcode Protection Lock Screen Overlay -->
+  <div id="passcodeScreen" class="passcode-screen hidden">
+    <div class="passcode-card glass-card">
+      <div class="lock-icon">🔒💖</div>
+      <h2 class="passcode-title" data-th="เว็บไซต์นี้ถูกล็อกไว้ด้วยความรัก" data-en="Protected with Love">
+        เว็บไซต์นี้ถูกล็อกไว้ด้วยความรัก</h2>
+      <p class="passcode-sub" data-th="กรุณากรอกรหัสผ่านเพื่อเข้าสู่ความทรงจำของเรา"
+        data-en="Please enter the passcode to unlock our sweet memories">กรุณากรอกรหัสผ่านเพื่อเข้าสู่ความทรงจำของเรา
+      </p>
+
+      <form id="passcodeForm" class="passcode-form">
+        <div class="passcode-input-group">
+          <input type="password" id="passcodeInput" class="form-control passcode-input" placeholder="••••" required
+            autocomplete="off">
+          <button type="submit" class="btn btn-primary unlock-btn">
+            <span data-th="ปลดล็อก 💕" data-en="Unlock 💕">ปลดล็อก 💕</span>
+          </button>
+        </div>
+        <p id="passcodeError" class="passcode-error hidden" data-th="รหัสผ่านไม่ถูกต้อง ลองอีกครั้งนะคนดี 💕"
+          data-en="Incorrect passcode. Try again 💕">รหัสผ่านไม่ถูกต้อง ลองอีกครั้งนะคนดี 💕</p>
+      </form>
+
+      <div class="passcode-hint-box" id="passcodeHintBox">
+        <button id="toggleHintBtn" class="hint-toggle-btn" type="button">
+          💡 <span data-th="ดูคำใบ้รหัสผ่าน" data-en="Show Passcode Hint">ดูคำใบ้รหัสผ่าน</span>
+        </button>
+        <p id="passcodeHintText" class="passcode-hint-text hidden"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Twinkling Stars Background -->
+  <div class="stars-bg" id="starsBg" aria-hidden="true"></div>
+
+  <!-- Background Floating Hearts & Particles -->
+  <div id="heartsContainer" class="hearts-container" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" id="navLogo">
+        <span class="heart-icon">💕</span> <span class="logo-text">Our Love Story</span>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#hero" class="nav-link" data-th="หน้าแรก" data-en="Home">หน้าแรก</a>
+        <a href="#timer" class="nav-link" data-th="นับเวลา" data-en="Timer">นับเวลา</a>
+        <a href="#timeline" class="nav-link" data-th="เรื่องราว" data-en="Timeline">เรื่องราว</a>
+        <a href="#gallery" class="nav-link" data-th="รูปภาพ" data-en="Gallery">รูปภาพ</a>
+        <a href="#letter" class="nav-link" data-th="จดหมาย" data-en="Letter">จดหมาย</a>
+        <a href="#music" class="nav-link" data-th="เพลงของเรา" data-en="Music">เพลงของเรา</a>
+        <a href="#reply" class="nav-link" data-th="ส่งข้อความ" data-en="Message">ส่งข้อความ</a>
+      </nav>
+      <div class="nav-actions">
+        <!-- Language Switcher Button -->
+        <button id="langToggleBtn" class="lang-btn" aria-label="Toggle Language">
+          <span id="langLabel">EN</span> 🌐
+        </button>
+        <!-- Music Quick Toggle -->
+        <button id="musicQuickToggle" class="music-mini-btn" aria-label="Toggle Music">
+          <span class="music-icon">🎵</span>
+        </button>
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-backdrop"></div>
+
+      <!-- Cute Floating Stickers -->
+      <div class="hero-stickers" aria-hidden="true">
+        <span class="hero-sticker">🌸</span>
+        <span class="hero-sticker">💕</span>
+        <span class="hero-sticker">✨</span>
+        <span class="hero-sticker">🌷</span>
+        <span class="hero-sticker">⭐</span>
+        <span class="hero-sticker">🌙</span>
+      </div>
+
+      <div class="hero-content" data-reveal="fade-up">
+        <div class="hero-badge">
+          <span class="sparkle">🌸</span>
+          <span data-th="วันพิเศษของเรา" data-en="Our Special Day">วันพิเศษของเรา</span>
+          <span class="sparkle">🌸</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="title-sub animated-gradient-text" data-th="สุขสันต์วันครบรอบ" data-en="Happy Anniversary">สุขสันต์วันครบรอบ</span>
+          <span class="couple-names" id="coupleNamesDisplay">You & Me</span>
+        </h1>
+        <p class="hero-subtitle"
+          data-th="ขอบคุณสำหรับทุกๆ วันที่เดินร่วมกัน ทุกความสุข ทุกรอยยิ้ม และความรักที่ไม่เคยน้อยลง"
+          data-en="Thank you for every day we walked together, every smile, and endless love.">
+          ขอบคุณสำหรับทุกๆ วันที่เดินร่วมกัน ทุกความสุข ทุกรอยยิ้ม และความรักที่ไม่เคยน้อยลง
+        </p>
+        <div class="hero-buttons">
+          <a href="#timer" class="btn btn-primary">
+            <span data-th="ดูเวลาที่เราคบกัน 💕" data-en="See Days Together 💕">ดูเวลาที่เราคบกัน 💕</span>
+          </a>
+          <a href="#letter" class="btn btn-secondary">
+            <span data-th="อ่านจดหมายความรู้สึก 💌" data-en="Read Love Letter 💌">อ่านจดหมายความรู้สึก 💌</span>
+          </a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span data-th="เลื่อนลงเพื่อดูเพิ่มเติม" data-en="Scroll down to explore">เลื่อนลงเพื่อดูเพิ่มเติม</span>
+        <div class="mouse-icon">
+          <div class="wheel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider: Hero → Timer -->
+    <div class="wave-divider wave-top" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="rgba(255,182,193,0.15)"/>
+        <path d="M0,55 C480,10 960,70 1440,55 L1440,80 L0,80 Z" fill="rgba(230,230,250,0.12)"/>
+      </svg>
+    </div>
+
+    <!-- COUNT-UP TIMER SECTION -->
+    <section id="timer" class="section timer-section">
+      <div class="container">
+        <div class="section-header" data-reveal="fade-up">
+          <span class="section-tag" data-th="เวลาแห่งความสุข" data-en="Time of Happiness">เวลาแห่งความสุข</span>
+          <h2 class="section-title" data-th="เราอยู่ด้วยกันมานานแค่ไหนแล้ว..."
+            data-en="How long we've been together...">เราอยู่ด้วยกันมานานแค่ไหนแล้ว...</h2>
+          <p class="section-description" data-th="นับตั้งแต่วินาทีแรกที่หัวใจเราตรงกัน จนถึงวินาทีนี้"
+            data-en="From the first second our hearts aligned until this very moment">
+            นับตั้งแต่วินาทีแรกที่หัวใจเราตรงกัน จนถึงวินาทีนี้</p>
+        </div>
+
+        <div class="timer-card glass-card" data-reveal="scale">
+          <div class="timer-grid">
+            <div class="timer-box">
+              <span class="timer-num" id="timerYears">0</span>
+              <span class="timer-lbl" data-th="ปี" data-en="Years">ปี</span>
+            </div>
+            <div class="timer-colon">:</div>
+            <div class="timer-box">
+              <span class="timer-num" id="timerMonths">0</span>
+              <span class="timer-lbl" data-th="เดือน" data-en="Months">เดือน</span>
+            </div>
+            <div class="timer-colon">:</div>
+            <div class="timer-box">
+              <span class="timer-num" id="timerDays">0</span>
+              <span class="timer-lbl" data-th="วัน" data-en="Days">วัน</span>
+            </div>
+            <div class="timer-colon">:</div>
+            <div class="timer-box">
+              <span class="timer-num" id="timerHours">00</span>
+              <span class="timer-lbl" data-th="ชั่วโมง" data-en="Hours">ชั่วโมง</span>
+            </div>
+            <div class="timer-colon">:</div>
+            <div class="timer-box">
+              <span class="timer-num" id="timerMinutes">00</span>
+              <span class="timer-lbl" data-th="นาที" data-en="Minutes">นาที</span>
+            </div>
+            <div class="timer-colon">:</div>
+            <div class="timer-box">
+              <span class="timer-num" id="timerSeconds">00</span>
+              <span class="timer-lbl" data-th="วินาที" data-en="Seconds">วินาที</span>
+            </div>
+          </div>
+
+          <div class="timer-footer">
+            <p class="total-days-text">
+              <span data-th="รวมเป็นเวลาทั้งหมด" data-en="Total time:">รวมเป็นเวลาทั้งหมด</span>
+              <strong id="timerTotalDays" class="highlight-pink">0</strong>
+              <span data-th="วันแห่งความรักและความผูกพัน 💖"
+                data-en="days of endless love & happiness 💖">วันแห่งความรักและความผูกพัน 💖</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Next Anniversary Countdown Box -->
+        <div class="next-ann-box glass-card" data-reveal="fade-up">
+          <div class="next-ann-header">
+            <span class="gift-icon">🎁</span>
+            <h3 data-th="นับถอยหลังสู่วันครบรอบรอบถัดไป" data-en="Countdown to Next Anniversary">
+              นับถอยหลังสู่วันครบรอบรอบถัดไป</h3>
+          </div>
+          <div class="next-countdown-grid">
+            <div class="cd-item"><span id="cdDays">0</span><label data-th="วัน" data-en="Days">วัน</label></div>
+            <div class="cd-item"><span id="cdHours">00</span><label data-th="ชั่วโมง" data-en="Hours">ชั่วโมง</label>
+            </div>
+            <div class="cd-item"><span id="cdMinutes">00</span><label data-th="นาที" data-en="Minutes">นาที</label>
+            </div>
+            <div class="cd-item"><span id="cdSeconds">00</span><label data-th="วินาที" data-en="Seconds">วินาที</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider: Timer → Timeline -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C240,20 480,70 720,40 C960,10 1200,60 1440,30 L1440,80 L0,80 Z" fill="rgba(255,218,185,0.15)"/>
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="rgba(255,182,193,0.1)"/>
+      </svg>
+    </div>
+
+    <!-- LOVE STORY TIMELINE SECTION -->
+    <section id="timeline" class="section timeline-section">
+      <div class="container">
+        <div class="section-header" data-reveal="fade-up">
+          <span class="section-tag" data-th="เส้นทางความรัก" data-en="Our Journey">เส้นทางความรัก</span>
+          <h2 class="section-title" data-th="บันทึกความทรงจำของเรา" data-en="Love Story Timeline">บันทึกความทรงจำของเรา
+          </h2>
+          <p class="section-description" data-th="ทุกเรื่องราว ทุกก้าวที่เราผ่านไปด้วยกัน"
+            data-en="Every chapter, every milestone we shared together">ทุกเรื่องราว ทุกก้าวที่เราผ่านไปด้วยกัน</p>
+        </div>
+
+        <div class="timeline-wrapper" id="timelineWrapper">
+          <!-- Timeline items will be dynamically loaded or pre-rendered -->
+          <div class="timeline-item left" data-reveal="fade-right">
+            <div class="timeline-dot">💖</div>
+            <div class="timeline-content glass-card">
+              <span class="timeline-date">15 มกราคม 2024</span>
+              <h3 data-th="วันแรกที่เราได้พบกัน 🌸" data-en="The Day We First Met 🌸">วันแรกที่เราได้พบกัน 🌸</h3>
+              <p data-th="จุดเริ่มต้นเล็กๆ ที่เปลี่ยนโลกทั้งใบให้สดใส รอยยิ้มแรกวันนั้นยังคงติดอยู่ในหัวใจเสมอ"
+                data-en="The sweet beginning that changed everything. That first smile is forever carved in my heart.">
+                จุดเริ่มต้นเล็กๆ ที่เปลี่ยนโลกทั้งใบให้สดใส รอยยิ้มแรกวันนั้นยังคงติดอยู่ในหัวใจเสมอ
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item right" data-reveal="fade-left">
+            <div class="timeline-dot">🌹</div>
+            <div class="timeline-content glass-card">
+              <span class="timeline-date">14 กุมภาพันธ์ 2024</span>
+              <h3 data-th="เดทแรกสุดแสนพิเศษ ☕" data-en="Our Special First Date ☕">เดทแรกสุดแสนพิเศษ ☕</h3>
+              <p data-th="ร้านกาแฟบรรยากาศอบอุ่น การพูดคุยที่ไม่จบสิ้น และความรู้สึกว่าเราเข้ากันได้อย่างน่าอัศจรรย์"
+                data-en="Warm coffee shop vibes, non-stop conversations, and feeling wonderfully connected.">
+                ร้านกาแฟบรรยากาศอบอุ่น การพูดคุยที่ไม่จบสิ้น และความรู้สึกว่าเราเข้ากันได้อย่างน่าอัศจรรย์
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item left" data-reveal="fade-right">
+            <div class="timeline-dot">💌</div>
+            <div class="timeline-content glass-card">
+              <span class="timeline-date">1 มีนาคม 2024</span>
+              <h3 data-th="วันที่เราตกลงเป็นแฟนกัน 💍" data-en="Officially Together 💍">วันที่เราตกลงเป็นแฟนกัน 💍</h3>
+              <p data-th="คำตกลงที่เปลี่ยนสองชีวิตให้กลายเป็นคำว่า 'เรา' สัญญาว่าจะดูแลกันและกันอย่างดีที่สุด"
+                data-en="The promise that changed 'you and me' into 'us'. Promising to cherish each other every day.">
+                คำตกลงที่เปลี่ยนสองชีวิตให้กลายเป็นคำว่า 'เรา' สัญญาว่าจะดูแลกันและกันอย่างดีที่สุด
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item right" data-reveal="fade-left">
+            <div class="timeline-dot">✈️</div>
+            <div class="timeline-content glass-card">
+              <span class="timeline-date">10 พฤษภาคม 2024</span>
+              <h3 data-th="ทริปแรกเดินทางด้วยกัน 🌊" data-en="Our First Trip Together 🌊">ทริปแรกเดินทางด้วยกัน 🌊</h3>
+              <p data-th="เสียงคลื่นทะเล พระอาทิตย์ตกดิน และการเดินทางที่มีเธออยู่ข้างๆ คือช่วงเวลาที่ดีที่สุด"
+                data-en="Ocean waves, sunsets, and travelling with you by my side was absolute magic.">
+                เสียงคลื่นทะเล พระอาทิตย์ตกดิน และการเดินทางที่มีเธออยู่ข้างๆ คือช่วงเวลาที่ดีที่สุด
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item left" data-reveal="fade-right">
+            <div class="timeline-dot">🎉</div>
+            <div class="timeline-content glass-card">
+              <span class="timeline-date">วันนี้ & ตลอดไป</span>
+              <h3 data-th="วันนี้และวันต่อๆ ไป ✨" data-en="Today & Forever ✨">วันนี้และวันต่อๆ ไป ✨</h3>
+              <p data-th="ไม่ว่าจะผ่านไปกี่ปี ความรักของเราก็จะยังเติบโตและงดงามยิ่งขึ้นเรื่อยๆ"
+                data-en="No matter how many years pass, our love will grow brighter and more beautiful every single day.">
+                ไม่ว่าจะผ่านไปกี่ปี ความรักของเราก็จะยังเติบโตและงดงามยิ่งขึ้นเรื่อยๆ
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider: Timeline → Gallery -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,20 C360,70 1080,10 1440,50 L1440,80 L0,80 Z" fill="rgba(176,224,230,0.15)"/>
+        <path d="M0,50 C480,0 960,60 1440,20 L1440,80 L0,80 Z" fill="rgba(230,230,250,0.1)"/>
+      </svg>
+    </div>
+
+    <!-- PHOTO GALLERY SECTION -->
+    <section id="gallery" class="section gallery-section">
+      <div class="container">
+        <div class="section-header" data-reveal="fade-up">
+          <span class="section-tag" data-th="แกลเลอรีรูปภาพ" data-en="Photo Gallery">แกลเลอรีรูปภาพ</span>
+          <h2 class="section-title" data-th="ภาพถ่ายแห่งความสุข" data-en="Captured Moments of Love">ภาพถ่ายแห่งความสุข
+          </h2>
+          <p class="section-description" data-th="ทุกรูปภาพเล่าเรื่องราวความทรงจำอันล้ำค่าของเรา"
+            data-en="Every single picture tells a precious story of us">ทุกรูปภาพเล่าเรื่องราวความทรงจำอันล้ำค่าของเรา
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="gallery-filters" data-reveal="fade-up">
+          <button class="filter-btn active" data-filter="all" data-th="ทั้งหมด" data-en="All">ทั้งหมด</button>
+          <button class="filter-btn" data-filter="trip" data-th="ทริปท่องเที่ยว" data-en="Trips">ทริปท่องเที่ยว</button>
+          <button class="filter-btn" data-filter="date" data-th="เดท" data-en="Dates">เดท</button>
+          <button class="filter-btn" data-filter="funny" data-th="เล่นเกม/อื่นๆ"
+            data-en="Cute Moments">เล่นเกม/อื่นๆ</button>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="gallery-masonry" id="galleryGrid">
+          <!-- Gallery Item 1 -->
+          <div class="gallery-item glass-card" data-category="trip" data-reveal="scale">
+            <div class="img-wrapper">
+              <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80"
+                alt="Romantic Sunset" loading="lazy">
+              <div class="img-overlay">
+                <span class="zoom-icon">🔍</span>
+                <span class="img-caption" data-th="ชมพระอาทิตย์ตกด้วยกัน"
+                  data-en="Watching sunset together">ชมพระอาทิตย์ตกด้วยกัน</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 2 -->
+          <div class="gallery-item glass-card" data-category="date" data-reveal="scale">
+            <div class="img-wrapper">
+              <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80"
+                alt="Coffee Date" loading="lazy">
+              <div class="img-overlay">
+                <span class="zoom-icon">🔍</span>
+                <span class="img-caption" data-th="เดทที่ร้านกาแฟสุดโปรด"
+                  data-en="Favorite coffee shop date">เดทที่ร้านกาแฟสุดโปรด</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 3 -->
+          <div class="gallery-item glass-card" data-category="funny" data-reveal="scale">
+            <div class="img-wrapper">
+              <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80"
+                alt="Sweet Smile" loading="lazy">
+              <div class="img-overlay">
+                <span class="zoom-icon">🔍</span>
+                <span class="img-caption" data-th="รอยยิ้มที่คุณทําให้โลกสดใส"
+                  data-en="Your smile lights up the world">รอยยิ้มที่คุณทําให้โลกสดใส</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 4 -->
+          <div class="gallery-item glass-card" data-category="trip" data-reveal="scale">
+            <div class="img-wrapper">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80"
+                alt="Hands Together" loading="lazy">
+              <div class="img-overlay">
+                <span class="zoom-icon">🔍</span>
+                <span class="img-caption" data-th="จับมือกันเดินไปทุกที่"
+                  data-en="Holding hands everywhere">จับมือกันเดินไปทุกที่</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 5 -->
+          <div class="gallery-item glass-card" data-category="date" data-reveal="scale">
+            <div class="img-wrapper">
+              <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80"
+                alt="Anniversary Dinner" loading="lazy">
+              <div class="img-overlay">
+                <span class="zoom-icon">🔍</span>
+                <span class="img-caption" data-th="มื้อค่ำสุดพิเศษ"
+                  data-en="Special candle dinner">มื้อค่ำสุดพิเศษ</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 6 -->
+          <div class="gallery-item glass-card" data-category="funny" data-reveal="scale">
+            <div class="img-wrapper">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+                alt="Cute portrait" loading="lazy">
+              <div class="img-overlay">
+                <span class="zoom-icon">🔍</span>
+                <span class="img-caption" data-th="เจ้าของหัวใจของฉัน"
+                  data-en="The keeper of my heart">เจ้าของหัวใจของฉัน</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox-modal" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">&times;</button>
+      <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+      <div class="lightbox-content">
+        <img id="lightboxImg" src="" alt="Full view picture">
+        <p id="lightboxCaption" class="lightbox-caption"></p>
+      </div>
+      <button class="lightbox-nav next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+    </div>
+
+    <!-- Wave Divider: Gallery → Letter -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C480,80 960,0 1440,40 L1440,80 L0,80 Z" fill="rgba(255,182,193,0.15)"/>
+        <path d="M0,60 C240,20 720,70 1440,30 L1440,80 L0,80 Z" fill="rgba(255,240,245,0.12)"/>
+      </svg>
+    </div>
+
+    <!-- LOVE LETTER SECTION -->
+    <section id="letter" class="section letter-section">
+      <div class="container">
+        <div class="section-header" data-reveal="fade-up">
+          <span class="section-tag" data-th="จากหัวใจ" data-en="From My Heart">จากหัวใจ</span>
+          <h2 class="section-title" data-th="จดหมายความรู้สึกถึงเธอ" data-en="My Love Letter to You">
+            จดหมายความรู้สึกถึงเธอ</h2>
+        </div>
+
+        <div class="envelope-wrapper" data-reveal="scale">
+          <div class="envelope-card glass-card">
+            <div class="letter-stamp">💌</div>
+            <h3 class="letter-salutation" data-th="ถึง... คนพิเศษของฉัน" data-en="To... My Dearest One">ถึง...
+              คนพิเศษของฉัน</h3>
+
+            <div class="letter-body cursive-font" id="typewriterText">
+              <p data-th="ขอบคุณนะสำหรับทุกช่วงเวลาที่มีเธออยู่ข้างๆ ตั้งแต่วันแรกจนถึงวันนี้ เธอคือของขวัญที่ดีที่สุดในชีวิตฉัน"
+                data-en="Thank you for every second you've been by my side. From the very first day until now, you are the greatest gift in my life.">
+                ขอบคุณนะสำหรับทุกช่วงเวลาที่มีเธออยู่ข้างๆ ตั้งแต่วันแรกจนถึงวันนี้ เธอคือของขวัญที่ดีที่สุดในชีวิตฉัน
+              </p>
+              <p data-th="ขอบคุณในความเข้าใจ ความใส่ใจ รอยยิ้มอบอุ่น และอ้อมกอดที่ทำให้ทุกๆ วันมีความหมาย เธอบวกสีสันและความสุขเข้ามาในโลกของฉันในแบบที่ไม่เคยคิดมาก่อน"
+                data-en="Thank you for your understanding, warmth, smiles, and hugs that make every day meaningful. You brought vibrant color into my world.">
+                ขอบคุณในความเข้าใจ ความใส่ใจ รอยยิ้มอบอุ่น และอ้อมกอดที่ทำให้ทุกๆ วันมีความหมาย
+                เธอบวกสีสันและความสุขเข้ามาในโลกของฉันในแบบที่ไม่เคยคิดมาก่อน
+              </p>
+              <p data-th="ไม่ว่าวันข้างหน้าจะมีเรื่องราวแบบไหน ฉันขอสัญญาว่าจะจับมือเธอไว้ สู้และยิ้มไปด้วยกัน สุขสันต์วันครบรอบนะคนดี รักเธอที่สุดในโลกเลย 💕"
+                data-en="No matter what lies ahead, I promise to hold your hand, smile, and walk through it all together. Happy Anniversary, my love! 💕">
+                ไม่ว่าวันข้างหน้าจะมีเรื่องราวแบบไหน ฉันขอสัญญาว่าจะจับมือเธอไว้ สู้และยิ้มไปด้วยกัน
+                สุขสันต์วันครบรอบนะคนดี รักเธอที่สุดในโลกเลย 💕
+              </p>
+            </div>
+
+            <div class="letter-signature">
+              <span data-th="เค้ารักเธอมากๆนะค้าบ" data-en="Forever & Always Yours,">เค้ารักเธอมากๆนะค้าบ</span>
+              <div class="signature-name cursive-font" id="senderNameDisplay">Your Love ❤️</div>
+            </div>
+
+            <button id="surpriseBtn" class="btn btn-primary surprise-btn" data-reveal="fade-up">
+              <span data-th="กดเพื่อรับความรัก! 🎉" data-en="Click for Love Surprise! 🎉">กดเพื่อรับความรัก! 🎉</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider: Letter → Music -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C360,80 1080,0 1440,50 L1440,80 L0,80 Z" fill="rgba(216,191,216,0.2)"/>
+        <path d="M0,55 C480,10 960,70 1440,35 L1440,80 L0,80 Z" fill="rgba(255,182,193,0.1)"/>
+      </svg>
+    </div>
+
+    <!-- MUSIC PLAYER SECTION -->
+    <section id="music" class="section music-section">
+      <div class="container">
+        <div class="section-header" data-reveal="fade-up">
+          <span class="section-tag" data-th="บทเพลงของเรา" data-en="Our Song">บทเพลงของเรา</span>
+          <h2 class="section-title" data-th="เพลงที่เต็มไปด้วยความหมาย" data-en="The Soundtrack of Our Love">
+            เพลงที่เต็มไปด้วยความหมาย</h2>
+        </div>
+
+        <div class="music-player-card glass-card" data-reveal="scale">
+          <div class="vinyl-container">
+            <div class="vinyl-disc" id="vinylDisc">
+              <div class="vinyl-center">💖</div>
+            </div>
+          </div>
+          <div class="player-details">
+            <h3 class="song-title" id="songTitle">Perfect Moment</h3>
+            <p class="song-artist" id="songArtist">Our Favorite Song</p>
+
+            <!-- Audio Element -->
+            <audio id="bgAudio" loop preload="metadata">
+              <!-- Royalty-free romantic background tune fallback -->
+              <source
+                src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-112627.mp3"
+                type="audio/mpeg">
+              Your browser does not support audio tag.
+            </audio>
+
+            <div class="progress-area">
+              <div class="progress-bar-bg" id="progressBarBg">
+                <div class="progress-bar-fill" id="progressBarFill"></div>
+              </div>
+              <div class="time-display">
+                <span id="currentTime">0:00</span>
+                <span id="durationTime">0:00</span>
+              </div>
+            </div>
+
+            <div class="player-controls">
+              <button id="prevTrackBtn" class="control-btn" aria-label="Previous Track">⏮️</button>
+              <button id="playPauseBtn" class="control-btn play-btn" aria-label="Play/Pause">▶️</button>
+              <button id="nextTrackBtn" class="control-btn" aria-label="Next Track">⏭️</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider: Music → Reply -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,50 C240,10 720,80 1440,30 L1440,80 L0,80 Z" fill="rgba(255,182,193,0.15)"/>
+        <path d="M0,25 C480,70 960,10 1440,55 L1440,80 L0,80 Z" fill="rgba(230,230,250,0.1)"/>
+      </svg>
+    </div>
+
+    <!-- MESSAGE & REPLY SECTION -->
+    <section id="reply" class="section reply-section">
+      <div class="container">
+        <div class="section-header" data-reveal="fade-up">
+          <span class="section-tag" data-th="ส่งความรู้สึกกลับ" data-en="Send a Response">ส่งความรู้สึกกลับ</span>
+          <h2 class="section-title" data-th="บอกอะไรกับฉันสักหน่อยสิคะ/ครับ" data-en="Leave a Message Back">
+            บอกอะไรกับฉันสักหน่อยสิคะ/ครับ</h2>
+          <p class="section-description" data-th="ส่งข้อความตอบกลับหรือเลือกความรู้สึกสั้นๆ เพื่อส่งตรงถึงฉัน"
+            data-en="Send a note or pick a quick reaction to share your love">ส่งข้อความตอบกลับหรือเลือกความรู้สึกสั้นๆ
+            เพื่อส่งตรงถึงฉัน</p>
+        </div>
+
+        <div class="reply-card glass-card" data-reveal="fade-up">
+          <form id="replyForm" class="reply-form">
+            <div class="form-group">
+              <label for="senderInputName" data-th="ชื่อของคุณ" data-en="Your Name">ชื่อของคุณ</label>
+              <input type="text" id="senderInputName" class="form-control" placeholder="ใส่ชื่อหรือฉายาน่ารักๆ..."
+                required>
+            </div>
+
+            <div class="form-group">
+              <label data-th="เลือกความรู้สึกสั้นๆ" data-en="Quick Heart Reaction">เลือกความรู้สึกสั้นๆ</label>
+              <div class="reaction-options">
+                <label class="reaction-chip">
+                  <input type="radio" name="quickReaction" value="รักเธอที่สุด 💕" checked>
+                  <span>รักเธอที่สุด 💕</span>
+                </label>
+                <label class="reaction-chip">
+                  <input type="radio" name="quickReaction" value="คิดถึงจังเลย 💖">
+                  <span>คิดถึงจังเลย 💖</span>
+                </label>
+                <label class="reaction-chip">
+                  <input type="radio" name="quickReaction" value="ขอบคุณสำหรับทุกอย่าง 🌸">
+                  <span>ขอบคุณสำหรับทุกอย่าง 🌸</span>
+                </label>
+                <label class="reaction-chip">
+                  <input type="radio" name="quickReaction" value="กอดๆ นะคะ/ครับ 🤗">
+                  <span>กอดๆ นะคะ/ครับ 🤗</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="replyMessageText" data-th="ข้อความจากใจ" data-en="Your Message">ข้อความจากใจ</label>
+              <textarea id="replyMessageText" class="form-control" rows="4" placeholder="พิมพ์ความรู้สึกของคุณที่นี่..."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary submit-btn">
+              <span data-th="ส่งข้อความกลับให้ฉัน 💌" data-en="Send Message Back 💌">ส่งข้อความกลับให้ฉัน 💌</span>
+            </button>
+          </form>
+
+          <!-- Sent Success Feedback Box -->
+          <div id="sentFeedback" class="sent-feedback hidden">
+            <div class="feedback-icon">💖🎉</div>
+            <h3 data-th="ได้รับข้อความแสนหวานแล้ว!" data-en="Sweet Message Received!">ได้รับข้อความแสนหวานแล้ว!</h3>
+            <p data-th="ขอบคุณสำหรับข้อความที่น่ารักมากๆ นะครับ/ค่ะ รักเธอที่สุดเลย!"
+              data-en="Thank you for your lovely message! Love you so much!">ขอบคุณสำหรับข้อความที่น่ารักมากๆ นะครับ/ค่ะ
+              รักเธอที่สุดเลย!</p>
+            <button id="sendAnotherBtn" class="btn btn-secondary" data-th="ส่งอีกข้อความ"
+              data-en="Send Another">ส่งอีกข้อความ</button>
+          </div>
+        </div>
+
+        <!-- Stored Local Messages / Guestbook Display -->
+        <div class="messages-display-area" id="messagesDisplayArea">
+          <h3 class="messages-heading" data-th="ข้อความที่คุณส่งมาแล้ว 💕" data-en="Sent Messages 💕">
+            ข้อความที่คุณส่งมาแล้ว 💕</h3>
+          <div class="messages-list" id="messagesList"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div style="font-size: 2rem; letter-spacing: 0.5rem; margin-bottom: 1rem; opacity: 0.7;" aria-hidden="true">🌸 💕 ✨ 💕 🌸</div>
+      <div class="footer-heart">💖</div>
+      <p class="footer-text">
+        <span data-th="สร้างด้วยความรักอย่างสุดหัวใจ เพื่อวันพิเศษของเราสองคน"
+          data-en="Crafted with pure love for our special day">สร้างด้วยความรักอย่างสุดหัวใจ
+          เพื่อวันพิเศษของเราสองคน</span>
+      </p>
+      <p class="copyright">&copy; <span id="currentYear">2026</span> <span id="footerCoupleNames">Our Love Story</span>.
+        Hosted with 💕 on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./config.js"></script>
+  <script src="./js/i18n.js"></script>
+  <script src="./js/config.js"></script>
+  <script src="./js/passcode.js"></script>
+  <script src="./js/timer.js"></script>
+  <script src="./js/gallery.js"></script>
+  <script src="./js/effects.js"></script>
+  <script src="./js/music.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

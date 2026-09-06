@@ -1,0 +1,1057 @@
+/* ==========================================================================
+   💕 AESTHETIC ENHANCEMENTS - Cute & Kawaii Romantic Styling
+   Bubble backgrounds, wave dividers, sticker decorations, 
+   sakura petals, star twinkle, premium glassmorphism upgrades
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ANIMATED BACKGROUND — Soft bubbly mesh gradient
+   -------------------------------------------------------------------------- */
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(255, 182, 193, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 70% at 80% 10%, rgba(230, 230, 250, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 60% at 50% 80%, rgba(255, 218, 185, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 50% at 90% 70%, rgba(176, 224, 230, 0.25) 0%, transparent 60%),
+    linear-gradient(160deg, #FFF0F5 0%, #FAF0FF 35%, #FFF5F0 65%, #F0F5FF 100%);
+  animation: meshShift 20s ease infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes meshShift {
+  0% {
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 20%, rgba(255, 182, 193, 0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 70% at 80% 10%, rgba(230, 230, 250, 0.4) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 60% at 50% 80%, rgba(255, 218, 185, 0.3) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 50% at 90% 70%, rgba(176, 224, 230, 0.25) 0%, transparent 60%),
+      linear-gradient(160deg, #FFF0F5 0%, #FAF0FF 35%, #FFF5F0 65%, #F0F5FF 100%);
+  }
+  50% {
+    background:
+      radial-gradient(ellipse 80% 50% at 70% 30%, rgba(255, 182, 193, 0.4) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 70% at 10% 60%, rgba(230, 230, 250, 0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 60% at 80% 90%, rgba(255, 218, 185, 0.3) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(216, 191, 216, 0.3) 0%, transparent 60%),
+      linear-gradient(160deg, #FFF5FA 0%, #F5F0FF 35%, #FFFAF0 65%, #F0FAFF 100%);
+  }
+  100% {
+    background:
+      radial-gradient(ellipse 80% 50% at 30% 70%, rgba(255, 182, 193, 0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 70% at 90% 40%, rgba(230, 230, 250, 0.45) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 60% at 20% 10%, rgba(255, 218, 185, 0.3) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 50% at 60% 90%, rgba(176, 224, 230, 0.3) 0%, transparent 60%),
+      linear-gradient(160deg, #F5F0FF 0%, #FFF0F5 35%, #F0F5FF 65%, #FFF5F0 100%);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. FLOATING SPARKLE STARS (CSS generated, no JS)
+   -------------------------------------------------------------------------- */
+.stars-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.star-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--pink-blush);
+  animation: starTwinkle var(--dur, 3s) var(--del, 0s) infinite ease-in-out;
+  opacity: 0;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 0.7; transform: scale(1); }
+}
+
+/* --------------------------------------------------------------------------
+   3. WAVE SECTION DIVIDERS
+   -------------------------------------------------------------------------- */
+.wave-divider {
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+  height: 80px;
+  pointer-events: none;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wave-top {
+  margin-bottom: -2px;
+}
+
+.wave-bottom {
+  margin-top: -2px;
+}
+
+/* --------------------------------------------------------------------------
+   4. DECORATIVE STICKER ELEMENTS
+   -------------------------------------------------------------------------- */
+.sticker {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  user-select: none;
+  font-size: 2rem;
+  animation: stickerFloat 5s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(255, 105, 180, 0.3));
+}
+
+.sticker:nth-child(2) { animation-delay: -1.5s; }
+.sticker:nth-child(3) { animation-delay: -3s; }
+.sticker:nth-child(4) { animation-delay: -0.8s; animation-duration: 6s; }
+
+@keyframes stickerFloat {
+  0%, 100% { transform: translateY(0) rotate(-5deg) scale(1); }
+  50% { transform: translateY(-10px) rotate(5deg) scale(1.08); }
+}
+
+/* --------------------------------------------------------------------------
+   5. SECTION BACKGROUND VARIATIONS (alternate pastel band pattern)
+   -------------------------------------------------------------------------- */
+.timer-section {
+  position: relative;
+}
+
+.timer-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.12) 0%, rgba(230, 230, 250, 0.18) 100%);
+  border-radius: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.timeline-section {
+  position: relative;
+}
+
+.timeline-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(230, 230, 250, 0.15) 0%, rgba(255, 218, 185, 0.1) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gallery-section {
+  position: relative;
+}
+
+.gallery-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 240, 245, 0.2) 0%, rgba(176, 224, 230, 0.1) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.letter-section {
+  position: relative;
+}
+
+.letter-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255, 182, 193, 0.15) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.music-section {
+  position: relative;
+}
+
+.music-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(216, 191, 216, 0.15) 0%, rgba(255, 182, 193, 0.1) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.reply-section {
+  position: relative;
+}
+
+.reply-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 182, 193, 0.1) 0%, rgba(230, 230, 250, 0.15) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.section > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   6. ENHANCED LOADING SCREEN
+   -------------------------------------------------------------------------- */
+.loading-screen {
+  background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 40%, #E6E6FA 100%) !important;
+}
+
+.loading-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   7. PREMIUM PASSCODE LOCK SCREEN
+   -------------------------------------------------------------------------- */
+.passcode-screen {
+  background: 
+    radial-gradient(ellipse at 30% 30%, rgba(255, 182, 193, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 70%, rgba(230, 230, 250, 0.6) 0%, transparent 50%),
+    linear-gradient(135deg, #FFB6C1 0%, #E6E6FA 50%, #FFDAB9 100%) !important;
+}
+
+.passcode-screen::before {
+  content: '💕 ✨ 🌸 ✨ 💕';
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+  letter-spacing: 1.5rem;
+  opacity: 0.6;
+  animation: floatSoft 4s ease-in-out infinite;
+}
+
+.passcode-card {
+  border-radius: 28px !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 2px solid rgba(255, 182, 193, 0.6) !important;
+  box-shadow: 
+    0 30px 80px rgba(255, 105, 180, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset !important;
+  overflow: hidden;
+}
+
+.passcode-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(255, 182, 193, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   8. KAWAII HERO SECTION ENHANCEMENTS
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z' fill='rgba(255,240,245,0.9)'/%3E%3C/svg%3E") center bottom / cover no-repeat;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hero-badge {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 182, 193, 0.7) !important;
+  box-shadow: 
+    0 8px 25px rgba(255, 105, 180, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+  padding: 0.6rem 1.5rem !important;
+  animation: badgePulse 3s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.9) inset; }
+  50% { box-shadow: 0 8px 35px rgba(255, 105, 180, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.9) inset; }
+}
+
+.couple-names {
+  filter: drop-shadow(0 4px 20px rgba(255, 105, 180, 0.35));
+  letter-spacing: -1px;
+  font-family: var(--font-display) !important;
+  font-weight: 400 !important;
+}
+
+/* Override for title-sub with gradient animation */
+.title-sub {
+  font-family: var(--font-sans) !important;
+  font-weight: 700 !important;
+}
+
+.hero-subtitle {
+  position: relative;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+/* Decorative stickers on hero */
+.hero-stickers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.hero-sticker {
+  position: absolute;
+  font-size: 2.5rem;
+  animation: stickerFloat 5s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(255, 105, 180, 0.4));
+  opacity: 0.85;
+}
+
+.hero-sticker:nth-child(1) { top: 15%; left: 8%; animation-delay: 0s; font-size: 2rem; }
+.hero-sticker:nth-child(2) { top: 20%; right: 10%; animation-delay: -2s; font-size: 2.8rem; }
+.hero-sticker:nth-child(3) { bottom: 25%; left: 5%; animation-delay: -4s; font-size: 2.2rem; }
+.hero-sticker:nth-child(4) { bottom: 20%; right: 7%; animation-delay: -1s; font-size: 3rem; }
+.hero-sticker:nth-child(5) { top: 40%; left: 2%; animation-delay: -3s; font-size: 1.8rem; }
+.hero-sticker:nth-child(6) { top: 35%; right: 2%; animation-delay: -1.5s; font-size: 2rem; }
+
+/* --------------------------------------------------------------------------
+   9. SUPER-ENHANCED GLASS CARDS
+   -------------------------------------------------------------------------- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.9) !important;
+  box-shadow:
+    0 8px 32px rgba(255, 105, 180, 0.08),
+    0 2px 8px rgba(255, 182, 193, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+  pointer-events: none;
+}
+
+.glass-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow:
+    0 20px 50px rgba(255, 105, 180, 0.18),
+    0 4px 12px rgba(255, 182, 193, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* --------------------------------------------------------------------------
+   10. TIMELINE ENHANCEMENTS
+   -------------------------------------------------------------------------- */
+.timeline-wrapper::before {
+  background: linear-gradient(180deg, 
+    rgba(255, 182, 193, 0.6) 0%, 
+    rgba(255, 105, 180, 0.8) 30%,
+    rgba(230, 230, 250, 0.8) 70%,
+    rgba(176, 224, 230, 0.6) 100%) !important;
+  width: 3px !important;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+}
+
+.timeline-dot {
+  background: linear-gradient(135deg, #fff 0%, #FFF0F5 100%) !important;
+  border: 3px solid var(--pink-blush) !important;
+  box-shadow: 
+    0 0 0 4px rgba(255, 182, 193, 0.3),
+    0 6px 20px rgba(255, 105, 180, 0.25) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-dot:hover {
+  transform: scale(1.15);
+  box-shadow: 
+    0 0 0 6px rgba(255, 182, 193, 0.4),
+    0 8px 25px rgba(255, 105, 180, 0.4) !important;
+}
+
+.timeline-date {
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.4), rgba(230, 230, 250, 0.4)) !important;
+  border: 1px solid rgba(255, 182, 193, 0.5);
+  font-size: 0.8rem !important;
+}
+
+/* --------------------------------------------------------------------------
+   11. TIMER BOXES — Extra Cute
+   -------------------------------------------------------------------------- */
+.timer-box {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 240, 245, 0.8)) !important;
+  border: 1.5px solid rgba(255, 182, 193, 0.5) !important;
+  box-shadow:
+    0 8px 25px rgba(255, 105, 180, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+  border-radius: 20px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.timer-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--pink-soft), var(--pink-blush), var(--pastel-lavender));
+  border-radius: 2px;
+}
+
+.timer-num {
+  background: linear-gradient(135deg, var(--pink-deep), var(--pink-blush));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 4px rgba(255, 20, 147, 0.2));
+}
+
+.timer-section .section-header::after {
+  content: '💖';
+  display: block;
+  font-size: 2.5rem;
+  margin: 0.75rem auto 0;
+  animation: heartPulse 1.5s infinite ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   12. ENVELOPE / LETTER SECTION — Premium Paper Effect
+   -------------------------------------------------------------------------- */
+.envelope-card {
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      rgba(255, 182, 193, 0.08) 27px,
+      rgba(255, 182, 193, 0.08) 28px
+    ),
+    linear-gradient(135deg, #FFFAF5 0%, #FFF0F5 100%) !important;
+  border: 2px dashed rgba(255, 182, 193, 0.5) !important;
+  border-radius: 24px !important;
+  box-shadow:
+    0 20px 60px rgba(255, 105, 180, 0.15),
+    0 5px 20px rgba(255, 182, 193, 0.2) !important;
+}
+
+.letter-salutation {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.letter-salutation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--pink-blush), var(--pastel-lavender));
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   13. MUSIC PLAYER — Cute Aesthetic
+   -------------------------------------------------------------------------- */
+.vinyl-disc {
+  background: 
+    radial-gradient(circle at 50% 50%, #1a1a1a 0%, #2d2d2d 20%, #111 35%, #333 50%, #1a1a1a 65%, #111 80%) !important;
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 2px rgba(255, 182, 193, 0.3),
+    0 0 20px rgba(255, 105, 180, 0.15) !important;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.vinyl-disc.playing {
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 2px rgba(255, 105, 180, 0.5),
+    0 0 30px rgba(255, 105, 180, 0.3) !important;
+}
+
+.vinyl-center {
+  background: linear-gradient(135deg, var(--pink-blush), var(--pink-deep)) !important;
+  box-shadow: 0 0 15px rgba(255, 20, 147, 0.5);
+  animation: heartPulse 2s ease-in-out infinite;
+}
+
+.play-btn {
+  background: linear-gradient(135deg, var(--pink-blush), var(--pink-deep)) !important;
+  box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4) !important;
+  transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+  transform: scale(1.12) !important;
+  box-shadow: 0 8px 28px rgba(255, 20, 147, 0.55) !important;
+}
+
+.progress-bar-fill {
+  background: linear-gradient(90deg, var(--pink-soft), var(--pink-blush), var(--pink-deep)) !important;
+  position: relative;
+}
+
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: var(--pink-deep);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 20, 147, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   14. GALLERY ENHANCEMENTS
+   -------------------------------------------------------------------------- */
+.gallery-item {
+  border-radius: 20px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.12) !important;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.4s ease !important;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  box-shadow: 0 20px 50px rgba(255, 105, 180, 0.25) !important;
+}
+
+.img-wrapper {
+  border-radius: 16px !important;
+}
+
+.filter-btn {
+  border-radius: 50px !important;
+  padding: 0.6rem 1.5rem !important;
+  font-weight: 700 !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--pink-blush), var(--pink-deep)) !important;
+  color: white !important;
+  border-color: transparent !important;
+  box-shadow: 0 6px 20px rgba(255, 20, 147, 0.35) !important;
+}
+
+/* --------------------------------------------------------------------------
+   15. REPLY SECTION — Cute form styling
+   -------------------------------------------------------------------------- */
+.form-control {
+  border-radius: 16px !important;
+  border: 2px solid rgba(255, 182, 193, 0.5) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease !important;
+}
+
+.form-control:focus {
+  border-color: var(--pink-blush) !important;
+  box-shadow: 0 0 0 4px rgba(255, 105, 180, 0.12) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+.reaction-chip span {
+  border-radius: 50px !important;
+  border: 1.5px solid rgba(255, 182, 193, 0.5) !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.reaction-chip input:checked + span {
+  background: linear-gradient(135deg, var(--pink-blush), var(--pink-deep)) !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3) !important;
+  transform: scale(1.05);
+}
+
+/* --------------------------------------------------------------------------
+   16. BUTTONS — Premium Gradient Enhancement
+   -------------------------------------------------------------------------- */
+.btn-primary {
+  background: linear-gradient(135deg, #FF9CC2 0%, #FF69B4 50%, #E85D75 100%) !important;
+  box-shadow: 
+    0 8px 25px rgba(255, 105, 180, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  border: none !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #FF69B4 0%, #E85D75 50%, #FF69B4 100%) !important;
+  box-shadow: 
+    0 14px 40px rgba(255, 105, 180, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-4px) scale(1.03) !important;
+}
+
+/* --------------------------------------------------------------------------
+   17. SECTION HEADER ENHANCEMENTS
+   -------------------------------------------------------------------------- */
+.section-tag {
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.5), rgba(230, 230, 250, 0.5)) !important;
+  border: 1px solid rgba(255, 182, 193, 0.6);
+  backdrop-filter: blur(8px);
+  font-weight: 800 !important;
+  letter-spacing: 3px !important;
+  color: var(--pink-deep) !important;
+  position: relative;
+  padding: 0.4rem 1.2rem !important;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pink-blush), var(--pastel-lavender));
+  border-radius: 3px;
+  margin: 0.75rem auto 0;
+}
+
+/* --------------------------------------------------------------------------
+   18. FOOTER UPGRADE
+   -------------------------------------------------------------------------- */
+.footer {
+  background: 
+    radial-gradient(ellipse at 30% 50%, rgba(255, 105, 180, 0.15) 0%, transparent 60%),
+    rgba(45, 27, 46, 0.97) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pink-soft), var(--pink-blush), var(--pastel-lavender), var(--pastel-sky), var(--pink-soft));
+  background-size: 300% 100%;
+  animation: rainbowSlide 5s linear infinite;
+}
+
+@keyframes rainbowSlide {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* --------------------------------------------------------------------------
+   19. NAVBAR ENHANCEMENT
+   -------------------------------------------------------------------------- */
+.navbar {
+  background: rgba(255, 255, 255, 0) !important;
+  transition: all 0.4s ease !important;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(20px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(200%) !important;
+  border-bottom: 1px solid rgba(255, 182, 193, 0.3) !important;
+  box-shadow: 0 4px 30px rgba(255, 105, 180, 0.1) !important;
+}
+
+.nav-logo {
+  background: linear-gradient(135deg, var(--pink-deep), var(--pink-blush));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(255, 20, 147, 0.2));
+}
+
+.lang-btn, .music-mini-btn {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1.5px solid rgba(255, 182, 193, 0.6) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+}
+
+.lang-btn:hover, .music-mini-btn:hover {
+  background: linear-gradient(135deg, var(--pink-blush), var(--pink-deep)) !important;
+  border-color: transparent !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(255, 20, 147, 0.35) !important;
+}
+
+/* --------------------------------------------------------------------------
+   20. SAKURA PETAL ANIMATION (JS-generated petals get this style)
+   -------------------------------------------------------------------------- */
+.sakura-petal {
+  position: absolute;
+  bottom: -5%;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at 30% 30%, #FFB6C1, #FF69B4);
+  border-radius: 50% 0 50% 0;
+  transform-origin: center;
+  animation: sakuraFall var(--fall-dur, 10s) var(--fall-del, 0s) infinite linear;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes sakuraFall {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg) scale(0.6);
+  }
+  10% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-50vh) translateX(var(--drift, 30px)) rotate(180deg) scale(1);
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-105vh) translateX(var(--drift2, -20px)) rotate(360deg) scale(0.8);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   21. LIGHTBOX ENHANCEMENT
+   -------------------------------------------------------------------------- */
+.lightbox-modal {
+  background: rgba(10, 5, 15, 0.92) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+.lightbox-content img {
+  border-radius: 20px !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 0 2px rgba(255, 182, 193, 0.3) !important;
+}
+
+.lightbox-caption {
+  font-family: var(--font-cursive) !important;
+  font-size: 1.3rem !important;
+  color: rgba(255, 182, 193, 0.9) !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   22. SCROLL INDICATOR — Cute dot animation
+   -------------------------------------------------------------------------- */
+.scroll-indicator {
+  animation: scrollFloat 3s ease-in-out infinite;
+}
+
+@keyframes scrollFloat {
+  0%, 100% { opacity: 0.7; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 1; transform: translateX(-50%) translateY(-5px); }
+}
+
+.mouse-icon {
+  border: 2px solid rgba(255, 182, 193, 0.7) !important;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   23. MSG ITEM — Cute message cards
+   -------------------------------------------------------------------------- */
+.msg-item {
+  border-radius: 20px !important;
+  border: 1.5px solid rgba(255, 182, 193, 0.3) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 240, 245, 0.7)) !important;
+  padding: 1.4rem 1.8rem !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.msg-item:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 30px rgba(255, 105, 180, 0.15) !important;
+}
+
+/* --------------------------------------------------------------------------
+   24. MOBILE MENU — Pretty Styling
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .nav-menu {
+    background: 
+      radial-gradient(ellipse at top, rgba(255, 182, 193, 0.3) 0%, transparent 60%),
+      rgba(255, 240, 250, 0.97) !important;
+    backdrop-filter: blur(30px) !important;
+    border-left: 2px solid rgba(255, 182, 193, 0.3);
+  }
+
+  .hero-sticker {
+    font-size: 1.8rem !important;
+    opacity: 0.6 !important;
+  }
+
+  .hero-sticker:nth-child(1),
+  .hero-sticker:nth-child(3),
+  .hero-sticker:nth-child(5) {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   25. GLOW / SPARKLE RING on timer card
+   -------------------------------------------------------------------------- */
+.timer-card {
+  position: relative;
+  overflow: visible !important;
+}
+
+.timer-card::after {
+  content: '✨';
+  position: absolute;
+  top: -1.2rem;
+  right: 2rem;
+  font-size: 1.8rem;
+  animation: sparkleRotate 3s linear infinite;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   26. SONG TITLE GRADIENT TEXT
+   -------------------------------------------------------------------------- */
+.song-title {
+  background: linear-gradient(135deg, var(--text-dark), var(--pink-deep));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --------------------------------------------------------------------------
+   27. LETTER BODY — Enhanced Font & Ink Effect
+   -------------------------------------------------------------------------- */
+.letter-body {
+  color: #3d2244 !important;
+  text-shadow: 0 1px 2px rgba(255, 105, 180, 0.1);
+}
+
+.letter-body p {
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.letter-body p::before {
+  content: '♡';
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  color: var(--pink-blush);
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* --------------------------------------------------------------------------
+   28. NEXT ANNIVERSARY CARD — Gradient accents
+   -------------------------------------------------------------------------- */
+.next-ann-box {
+  border: 1.5px solid rgba(255, 182, 193, 0.4) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 240, 245, 0.7)) !important;
+}
+
+.cd-item {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 240, 245, 0.8)) !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 182, 193, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.08) !important;
+}
+
+.cd-item span {
+  background: linear-gradient(135deg, var(--pink-rose), var(--pink-deep));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --------------------------------------------------------------------------
+   29. ENGLISH FONT READABILITY ENHANCEMENTS
+   -------------------------------------------------------------------------- */
+
+/* Font smoothing & rendering optimization */
+body, button, input, select, textarea {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Upgrade cursive/handwriting elements to Caveat (crystal clear handwritten font) */
+.cursive-font {
+  font-family: 'Caveat', 'Dancing Script', cursive !important;
+  font-size: 1.45rem;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em;
+}
+
+/* Letter body: replace hard-to-read script with clear, warm Caveat & Playfair Display fallbacks */
+.letter-body {
+  font-family: 'Caveat', 'Playfair Display', Georgia, cursive !important;
+  font-size: 1.55rem !important;
+  line-height: 1.85 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  color: #2D1B2E !important;
+}
+
+.letter-body p {
+  line-height: 1.85 !important;
+  margin-bottom: 1.2rem !important;
+}
+
+/* Letter Signature */
+.signature-name {
+  font-family: 'Caveat', 'Pacifico', cursive !important;
+  font-size: 2.3rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em;
+}
+
+/* English Mode Specific Enhancements (when lang="en") */
+html[lang="en"] body {
+  font-family: 'Nunito', 'Outfit', 'Quicksand', sans-serif !important;
+}
+
+html[lang="en"] .section-title,
+html[lang="en"] .passcode-title {
+  font-family: 'Playfair Display', 'Outfit', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.35 !important;
+}
+
+html[lang="en"] .title-sub {
+  font-family: 'Outfit', 'Nunito', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.03em !important;
+}
+
+html[lang="en"] .nav-link {
+  font-family: 'Outfit', 'Nunito', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+}
+
+html[lang="en"] .btn {
+  font-family: 'Outfit', 'Nunito', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+}
+
+html[lang="en"] .timer-number,
+html[lang="en"] .cd-item span {
+  font-family: 'Outfit', 'Nunito', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em;
+}
+
+html[lang="en"] .timeline-title,
+html[lang="en"] .gallery-title,
+html[lang="en"] .card-title {
+  font-family: 'Outfit', 'Playfair Display', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em;
+}
+
+html[lang="en"] .timeline-desc,
+html[lang="en"] .hero-subtitle,
+html[lang="en"] .passcode-sub,
+html[lang="en"] .section-description {
+  font-family: 'Nunito', 'Quicksand', sans-serif !important;
+  font-weight: 500 !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.01em;
+}
+
+html[lang="en"] .lightbox-caption {
+  font-family: 'Caveat', cursive !important;
+  font-size: 1.45rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+}
