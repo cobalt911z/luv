@@ -24,11 +24,16 @@
 
     if (!security.enabled || isUnlocked) {
       passcodeScreen.classList.add('hidden');
+      passcodeScreen.style.setProperty('display', 'none', 'important');
+      passcodeScreen.style.pointerEvents = 'none';
+      document.body.style.overflow = '';
       return;
     }
 
     // Show passcode lock screen
     passcodeScreen.classList.remove('hidden');
+    passcodeScreen.style.setProperty('display', 'flex', 'important');
+    passcodeScreen.style.pointerEvents = 'auto';
     document.body.style.overflow = 'hidden';
 
     // Populate hint text if available
@@ -65,8 +70,11 @@
 
           // Fade out lock screen
           passcodeScreen.classList.add('fade-out');
+          passcodeScreen.style.pointerEvents = 'none';
+          
           setTimeout(() => {
             passcodeScreen.classList.add('hidden');
+            passcodeScreen.style.setProperty('display', 'none', 'important');
             document.body.style.overflow = '';
           }, 500);
 

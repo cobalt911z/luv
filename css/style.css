@@ -1609,6 +1609,15 @@ img {
 .passcode-screen.fade-out {
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
+}
+
+.passcode-screen.hidden {
+  display: none !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  z-index: -99999 !important;
 }
 
 .passcode-card {

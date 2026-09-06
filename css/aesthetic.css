@@ -249,6 +249,20 @@ body::before {
     linear-gradient(135deg, #FFB6C1 0%, #E6E6FA 50%, #FFDAB9 100%) !important;
 }
 
+.passcode-screen.hidden {
+  display: none !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  z-index: -99999 !important;
+}
+
+.passcode-screen.fade-out {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 .passcode-screen::before {
   content: '💕 ✨ 🌸 ✨ 💕';
   position: absolute;
