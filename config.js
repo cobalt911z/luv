@@ -141,6 +141,14 @@ const CONFIG = {
       captionEn: "The keeper of my heart",
       category: "date"
     },
+      {
+      type: "video",
+      src: "https://cdn.discordapp.com/attachments/1506702021632462939/1546557903086026822/Screen_Recording_2026-09-07_232827.mp4?ex=6aa037c9&is=6a9ee649&hm=96d5dc29f391c1abb008924c0c27035c9593065081caf99e5348521f54b8891c&", // สามารถใช้ลิงก์วิดีโอ MP4 หรือ YouTube URL ได้
+      poster: "https://i.pinimg.com/736x/0f/90/cd/0f90cde60e71d2b89532c4846e3f3ffa.jpg", // รูปหน้าปกวิดีโอ (ถ้ามี)
+      captionTh: "เล่นเกม Minecraft ด้วยยกัน",
+      captionEn: "Playing Minecraft together",
+      category: "funny"
+    },
     {
       type: "image",
       src: "https://media.discordapp.net/attachments/1506702021632462939/1542240695392145523/Messenger_creation_B9FB75C9-FD4C-4302-99E5-E662C7873EAE.jpg?ex=6a9e5ad3&is=6a9d0953&hm=084f79e62fba823b158c5f9004f1492d6eba3800b6843e442c733b521e37e03c&=&format=webp&width=1604&height=902",
